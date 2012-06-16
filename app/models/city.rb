@@ -1,5 +1,5 @@
 #coding: UTF-8
-class Car < ActiveRecord::Base
+class City < ActiveRecord::Base
   has_many :car_violations
 
 end
