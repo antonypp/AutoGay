@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20120616160018) do
     t.integer  "car_id"
     t.string   "description"
     t.float    "lat"
-    t.float    "lang"
+    t.float    "long"
     t.integer  "area_id"
     t.integer  "city_id"
     t.string   "address"

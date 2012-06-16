@@ -10,6 +10,7 @@ namespace :app do
       if location[:area]
         violation.area = Area.find_by_name(location[:area])
       end
+      violation.completion!
     end
   end
 end

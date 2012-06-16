@@ -4,7 +4,7 @@ class AddTableCarViolations < ActiveRecord::Migration
       t.references :car
       t.string :description
       t.float :lat
-      t.float :lang
+      t.float :long
       t.references :area
       t.references :city
       t.string :address
