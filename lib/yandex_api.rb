@@ -18,7 +18,7 @@ class YandexApi
     format.map do |key,val|
       elements = doc.elements.to_a(val)
       unless elements.empty?
-        result[val] = elements[0].text
+        result[key] = elements[0].text
       end
     end
     result
