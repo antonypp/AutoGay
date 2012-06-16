@@ -1,0 +1,4 @@
+.home
+  - @violations.each do |violation|
+    .item
+      = link_to violation.id, violation_path(violation)
