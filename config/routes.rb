@@ -1,7 +1,13 @@
 AutoGay::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
+  namespace "api", module: "api" do
+    resources :violations, only: [:index, :create, ] do
+      resource :rate, only: [:create]
+      resources :comments, only: [ :create, :index]
+    end
+    resources :cars
+  end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
