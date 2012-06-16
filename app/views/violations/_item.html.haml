@@ -1,0 +1,10 @@
+%li.span3
+  .thumbnail
+    = link_to violation_path(violation) do
+      = image_tag "http://placehold.it/260x180"
+    .caption{style:"text-align:center;"}
+      %h2 a111aa173
+      %p=violation.description
+      %p
+        =link_to "Наказать", "#", class: "btn btn-danger"
+        =link_to "Оправдать", "#", class: "btn btn-success"

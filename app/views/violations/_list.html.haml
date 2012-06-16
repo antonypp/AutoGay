@@ -1,3 +1,3 @@
-.list
-  - @violations.each do |violation|
-    =render partial: 'item.html.haml', locales: {violation: violation}
+%ul.thumbnails
+  - violations.each do |violation|
+    =render partial: 'violations/item', locals: {violation: violation}
