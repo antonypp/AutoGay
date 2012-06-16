@@ -1,7 +1,8 @@
 
-class Api::RateController < ActionController::Base
+class Api::RateController < Api::ApplicationController
   def create
-    violation = Violation.find params[:violation_id]
+    violation = Car::Violation.find params[:violation_id]
     violation.judge params[:post] == 'judge'
+    head :OK
   end
 end
