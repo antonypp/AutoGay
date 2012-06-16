@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616130929) do
+ActiveRecord::Schema.define(:version => 20120616160018) do
+
+  create_table "areas", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "car_violation_comments", :force => true do |t|
     t.string  "text"
@@ -23,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20120616130929) do
     t.string   "description"
     t.float    "lat"
     t.float    "lang"
+    t.integer  "area_id"
     t.integer  "city_id"
     t.string   "address"
     t.string   "state"
