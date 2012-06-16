@@ -20,7 +20,7 @@ class Car::Violation < ActiveRecord::Base
       transition :queried => :new
     end
 
-    event :send do
+    event :send_by_server do
       transition :new => :sent
     end
 
