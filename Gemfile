@@ -14,6 +14,7 @@ gem 'sass'
 gem 'russian', :git => "git://github.com/relev/russian.git"
 gem "state_machine"
 gem 'paperclip'
+gem "twitter-bootstrap-rails"
 
 group :development do
     gem "rspec"
