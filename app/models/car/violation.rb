@@ -1,6 +1,8 @@
 class Car::Violation < ActiveRecord::Base
   belongs_to :car
-  has_one :city
+  belongs_to :city
+  belongs_to :area
+
   has_attached_file :image
   attr_accessor :image_data
   attr_accessor :image_type

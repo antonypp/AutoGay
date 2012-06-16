@@ -1,9 +1,10 @@
-namespace :app do
+namespace :violation do
 
   desc 'Updates not defined cities by yandex geoapi'
-  task :update do |env|
-    Car::Violation.queried.each do |violation|
+  task :update => :environment do
+    Car::Violation.with_state(:queried).each do |violation|
       location = YandexApi.get_address(violation.long, violation.lat)
+      puts location.inspect
       if location[:city]
         violation.city = City.find_by_name(location[:city])
       end
