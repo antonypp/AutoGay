@@ -13,6 +13,7 @@ gem 'haml'
 gem 'sass'
 gem 'russian', :git => "git://github.com/relev/russian.git"
 gem "state_machine"
+gem 'paperclip'
 
 group :development do
     gem "haml-rails"
