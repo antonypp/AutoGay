@@ -16,6 +16,8 @@ gem "state_machine"
 gem 'paperclip'
 
 group :development do
+    gem "rspec"
+    gem "rspec-rails"
     gem "haml-rails"
     gem 'pry'
     gem 'pry-rails'
