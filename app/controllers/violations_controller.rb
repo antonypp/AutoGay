@@ -2,7 +2,7 @@
 class ViolationsController < ApplicationController
 
   def index
-   @violations = Car::Violation.limit(10).all
+   @violations = Car::Violation.with_status(:new).limit(10).all
   end
 
   def show

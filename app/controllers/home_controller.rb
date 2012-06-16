@@ -2,6 +2,6 @@
 class HomeController < ApplicationController
 
   def index
-   @violations = Car::Violation.limit(10).all
+   @violations = Car::Violation.with_state(:new).limit(9).all
   end
 end

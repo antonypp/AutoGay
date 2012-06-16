@@ -1,12 +1,15 @@
 class Car::Violation < ActiveRecord::Base
+  attr_accessor :image_file_name, :image_content_type, :image_file_size, :image_data
+  belongs_to :city
+  belongs_to :area
   belongs_to :car
   has_many :comments
-  attr_accessor :image_file_name, :image_content_type, :image_file_size
   has_attached_file :image,
                     :path => ":rails_root/public/system/:class/image/:id.:extension"
-  attr_accessor :image_data
+
   before_validation :decode_image_data,
                     :if => :image_data_provided?
+
 
   state_machine :initial => :queried do
 
@@ -38,6 +41,8 @@ class Car::Violation < ActiveRecord::Base
     end
 
   end
+
+  default_scope order('id DESC')
 
   def image_url
     image.url
