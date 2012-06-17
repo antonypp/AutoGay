@@ -4,7 +4,7 @@ namespace :twitter do
   task :send => :environment do
     Car::Violation.with_state(:new).each do |violation|
       begin
-        res = Twitter.update_with_media violation.description,
+        res = Twitter.update_with_media violation.description[0..137] + '..',
                                 File.new(violation.image.path),
                                 {:long => violation.long, :lat => violation.lat, :display_coordinates => 'true'}
         violation.send_by_server!
