@@ -1,11 +1,14 @@
 .violation
-  .photo
-    =link_to "#" do
-      = image_tag @violation.image_url
-  .params
-    %h2.description= @violation.description
+  .top
+    .photo
+      =link_to "#" do
+        = image_tag @violation.image_url
+    .params
+      %h2.description= @violation.description
+      .buttons
+        =link_to "Наказать", "#", class: "btn btn-danger btn-big"
+        =link_to "Оправдать", "#", class: "btn btn-success btn-big"
+
+  .bottom
     %h2.number= @violation.car.number
     .address= @violation.address
-    .buttons
-      =link_to "Наказать", "#", class: "btn btn-danger btn-big"
-      =link_to "Оправдать", "#", class: "btn btn-success btn-big"

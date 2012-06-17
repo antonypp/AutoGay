@@ -1,5 +1,4 @@
 class Car::Violation < ActiveRecord::Base
-  attr_accessor :image_file_name, :image_content_type, :image_file_size, :image_data
   belongs_to :city
   belongs_to :area
   belongs_to :car
