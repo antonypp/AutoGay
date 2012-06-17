@@ -1,26 +1,15 @@
-= javascript_include_tag "http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU"
-:javascript
-  ymaps.ready(function () {
-    var map = new ymaps.Map('map', {center: [56.034, 36.992], zoom: 8})
-    myGeoObjects = [];
-    myGeoObjects[0] = new ymaps.GeoObject({
-    geometry: {type: "Point", coordinates: [56.034, 36.992]},
-      properties: {
-        clusterCaption: 'Геообъект №1',
-                balloonContentBody: 'Содержимое балуна геообъекта №1.'
-                    }
-                    });
-                    myGeoObjects[1] = new ymaps.GeoObject({
-    geometry: {type: "Point", coordinates: [56.021, 36.983]},
-      properties: {
-        clusterCaption: 'Геообъект №2',
-                balloonContentBody: 'Содержимое балуна геообъекта №2.'
-                    }
-                    });
-
-  clusterer = new ymaps.Clusterer({clusterDisableClickZoom: true});
-  clusterer.add(myGeoObjects);
-  map.geoObjects.add(clusterer);
-  });
+- if @my_geo_objects.present?
+  :javascript
+    ymaps.ready(function () {
+      myGeoObjects = [];
+      mgo_json = #{@my_geo_objects}
+      var map = new ymaps.Map('map', {center: mgo_json[0]["geometry"]["coordinates"], zoom: 13})
+      for(prop in mgo_json) {
+        myGeoObjects[prop] = new ymaps.GeoObject(mgo_json[prop]);
+          }
+    clusterer = new ymaps.Clusterer({clusterDisableClickZoom: true});
+    clusterer.add(myGeoObjects);
+    map.geoObjects.add(clusterer);
+    });
 
 .map{:id => "map", :style =>"height:500px"}
