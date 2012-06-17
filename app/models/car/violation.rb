@@ -6,7 +6,8 @@ class Car::Violation < ActiveRecord::Base
   has_attached_file :image,
                     :preserve_files => true,
                     :path => ":rails_root/public/images/:class/:id_:style.:extension",
-                    :url => "/images/:class/:id_:style.:extension"
+                    :url => "/images/:class/:id_:style.:extension",
+                    :styles => { :medium => "260x180#", :device => "x180#" }
   attr_accessor :image_data
 
   before_validation :decode_image_data,
@@ -47,7 +48,7 @@ class Car::Violation < ActiveRecord::Base
   default_scope order('id DESC')
 
   def image_url
-    image.url[0..image.url.index('?')-1]
+    image.url(:device)[0..image.url.index('?')-1]
   end
 
   def judge(is_judge)

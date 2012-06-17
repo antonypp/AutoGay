@@ -1,8 +1,8 @@
 .violation
   .top
     .photo
-      =link_to @violation.image_url, :target => 'blank' do
-        = image_tag @violation.image_url
+      =link_to @violation.image.url, :target => 'blank' do
+        = image_tag @violation.image.url
     .params
       %h2.description= @violation.description
       .buttons.rating-js
