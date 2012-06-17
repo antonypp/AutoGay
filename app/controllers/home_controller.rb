@@ -4,4 +4,8 @@ class HomeController < ApplicationController
   def index
    @violations = Car::Violation.with_state(:new).limit(9).all
   end
+
+  def map
+    @violations = Car::Violation.with_state(:new).limit(9).all
+  end
 end

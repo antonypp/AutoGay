@@ -3,6 +3,8 @@ AutoGay::Application.routes.draw do
   resources :violations do
     resource :comments, only: [:create]
   end
+  get "/map", :to => "home#map"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   namespace "api", module: "api" do
