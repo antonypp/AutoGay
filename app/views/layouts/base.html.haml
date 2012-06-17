@@ -38,6 +38,9 @@
             = yield
           .span3
             .well.sidebar-nav
+              %ul.nav.nav-list
+                %li
+                  %h3= link_to "Все нарушения", violations_path
               %h3 Мобильное приложение
               .button
                 =image_tag "http://mobile.yandex.ru/i/appstore.png"
