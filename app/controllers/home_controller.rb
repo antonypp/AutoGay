@@ -20,4 +20,12 @@ class HomeController < ApplicationController
     end
     @my_geo_objects = @my_geo_objects.to_json
   end
+
+  def about
+
+  end
+
+  def tagret
+
+  end
 end

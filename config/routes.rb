@@ -1,9 +1,13 @@
 AutoGay::Application.routes.draw do
   root :to => "home#index"
+  get "/map", :to => "home#map"
+  get "/about", :to => "home#about"
+  get "/target", :to => "home#target"
+
   resources :violations do
     resource :comments, only: [:create]
   end
-  get "/map", :to => "home#map"
+
   resources :cars
   # The priority is based upon order of creation:
   # first created -> highest priority.
