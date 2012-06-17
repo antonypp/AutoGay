@@ -1,6 +1,6 @@
 #coding: UTF-8
 class Car < ActiveRecord::Base
-  has_many :car_violations
+  has_many :violations
 
   before_validation :correct_number
 

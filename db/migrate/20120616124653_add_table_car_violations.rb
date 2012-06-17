@@ -12,6 +12,7 @@ class AddTableCarViolations < ActiveRecord::Migration
       t.integer :count_good, :default => 0
       t.integer :count_bad, :default => 0
       t.float :rating
+      t.attachment :image
       t.timestamps
     end
   end

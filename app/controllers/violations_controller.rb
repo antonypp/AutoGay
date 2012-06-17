@@ -7,6 +7,7 @@ class ViolationsController < ApplicationController
 
   def show
     @violation = Car::Violation.find(params[:id])
-    raise @violation.inspect
+    logger.info @violation.image_url.inspect
+    #raise @violation.inspect
   end
 end
