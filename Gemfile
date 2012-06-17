@@ -15,6 +15,8 @@ gem 'russian', :git => "git://github.com/relev/russian.git"
 gem "state_machine"
 gem 'paperclip'
 gem "twitter-bootstrap-rails"
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate'
 
 group :development do
     gem "rspec"
