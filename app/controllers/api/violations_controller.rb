@@ -2,8 +2,9 @@ require 'rexml/document'
 
 class Api::ViolationsController < Api::ApplicationController
   def index
-    result = Car::Violation.limit(10).find_by_city(City.find_by_name(params[:city]))
-    render 'views/api/violations/index', :locals => {:violations => result}
+    @violations = Car::Violation.limit(10).all
+    #.find_by_city_id(:city_id => City.find_by_name(params[:city]).id)
+    render :format => :json
   end
   def create
     viol_case = params
