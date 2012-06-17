@@ -9,8 +9,8 @@ class AddTableCarViolations < ActiveRecord::Migration
       t.references :city
       t.string :address
       t.string :state
-      t.integer :count_good
-      t.integer :count_bad
+      t.integer :count_good, :default => 0
+      t.integer :count_bad, :default => 0
       t.float :rating
       t.timestamps
     end

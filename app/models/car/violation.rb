@@ -48,6 +48,15 @@ class Car::Violation < ActiveRecord::Base
     image.url
   end
 
+  def judge(is_judge)
+    if is_judge
+      self.count_bad += 1
+    else
+      self.count_good +=1
+    end
+    save
+  end
+
   private
 
   def image_data_provided?
@@ -61,15 +70,6 @@ class Car::Violation < ActiveRecord::Base
     data.original_filename = "image.png"
     data.content_type = "image/png"
     self.image = data
-  end
-
-  def judge(is_judge)
-    if is_judge
-      self.count_bad += 1
-    else
-      self.count_good +=1
-    end
-    save()
   end
 
 end

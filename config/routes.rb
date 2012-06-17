@@ -5,7 +5,7 @@ AutoGay::Application.routes.draw do
   # first created -> highest priority.
   namespace "api", module: "api" do
     resources :violations, only: [:index, :create, :show ] do
-      resource :rate, only: [:create]
+      resource :rates, only: [:create]
       resources :comments, only: [ :create, :index]
     end
     resources :cars
