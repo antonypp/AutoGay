@@ -31,15 +31,15 @@ ActiveRecord::Schema.define(:version => 20120616160018) do
     t.integer  "city_id"
     t.string   "address"
     t.string   "state"
-    t.integer  "count_good"
-    t.integer  "count_bad"
+    t.integer  "count_good",         :default => 0
+    t.integer  "count_bad",          :default => 0
     t.float    "rating"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   create_table "cars", :force => true do |t|
