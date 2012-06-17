@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20120616160018) do
 
   create_table "car_violation_comments", :force => true do |t|
     t.string  "text"
-    t.integer "car_violation_id"
+    t.integer "violation_id"
   end
 
   create_table "car_violations", :force => true do |t|

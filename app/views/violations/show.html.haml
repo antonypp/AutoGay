@@ -12,3 +12,14 @@
   .bottom
     %h2.number= @violation.car.try(:number) || "Нет номера"
     .address= @violation.address
+
+  .comments
+    .add-comment
+      %form{id: 'comment', action: violation_comments_path(@violation), method: :POST}
+        %label= 'Текст сообщения'
+        %textarea{class:'text', name: 'text', cols: 20, rows: 2}
+        %a.send.btn
+          Отправить
+    .comments-list
+      - @violation.comments.each do |comment|
+        =render partial: 'comments/item', locals: {comment: comment}

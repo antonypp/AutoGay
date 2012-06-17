@@ -66,11 +66,11 @@ class Car::Violation < ActiveRecord::Base
   end
 
   def decode_image_data
-    StringIO.open(Base64.decode64(self.image_data)) do |data|
-      data.original_filename = "image_name.png"
-      data.content_type = "image/png"
-      self.image = data
-    end
+    data = StringIO.new(Base64.decode64(self.image_data))
+    data.class.class_eval { attr_accessor :original_filename, :content_type }
+    data.original_filename = "image.png"
+    data.content_type = "image/png"
+    self.image = data
   end
 
 end
