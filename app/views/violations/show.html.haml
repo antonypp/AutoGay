@@ -10,7 +10,8 @@
         =link_to "Оправдать", api_violation_rates_path(@violation), class: "acquit btn btn-big btn-success"
 
   .bottom
-    %h2.number= @violation.car.try(:number) || "Нет номера"
+    = link_to @violation.car do
+      %h2.number= @violation.car.try(:number) || "Нет номера"
     .address= @violation.address
 
   .comments

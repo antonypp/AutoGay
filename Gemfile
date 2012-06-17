@@ -17,6 +17,7 @@ gem 'paperclip'
 gem "twitter-bootstrap-rails"
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
+gem 'twitter'
 
 group :development do
     gem "rspec"
