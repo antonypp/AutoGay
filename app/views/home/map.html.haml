@@ -11,6 +11,7 @@
     clusterer = new ymaps.Clusterer({clusterDisableClickZoom: true});
     clusterer.add(myGeoObjects);
     map.geoObjects.add(clusterer);
+    map.controls.add('mapTools').add("zoomControl");
     });
 
 .map{:id => "map", :style =>"height:500px"}
