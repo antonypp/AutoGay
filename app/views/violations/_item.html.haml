@@ -1,7 +1,7 @@
 %li.span3
   .thumbnail
     = link_to violation_path(violation) do
-      = image_tag "http://placehold.it/260x180"
+      = image_tag violation.image_url, :size => "260x180"
     .caption{style:"text-align:center;"}
       %h2=violation.car.try(:number) || "Нет номера"
       %p=violation.description

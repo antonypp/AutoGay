@@ -1,0 +1,3 @@
+%h2.number= @car.number
+.violations
+  = render partial: "violations/list", locals: {violations: @car.violations}

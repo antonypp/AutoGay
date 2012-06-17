@@ -1,7 +1,7 @@
 .violation
   .top
     .photo
-      =link_to "#" do
+      =link_to @violation.image_url, :target => 'blank' do
         = image_tag @violation.image_url
     .params
       %h2.description= @violation.description

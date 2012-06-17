@@ -4,7 +4,7 @@ AutoGay::Application.routes.draw do
     resource :comments, only: [:create]
   end
   get "/map", :to => "home#map"
-
+  resources :cars
   # The priority is based upon order of creation:
   # first created -> highest priority.
   namespace "api", module: "api" do
